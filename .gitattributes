@@ -1,0 +1,37 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Unity Project
+*.fbx -text
+*.js text eol=lf
+*.mat text eol=lf
+*.meta text eol=lf
+*.prefab text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.unity text eol=lf
+*.anim text eol=lf
+*.asset text eol=lf
+*.boo text eol=lf
+*.controller text eol=lf
+
+# Custom for Visual Studio
+*.cs     diff=csharp
+*.sln    merge=union
+*.csproj merge=union
+*.vbproj merge=union
+*.fsproj merge=union
+*.dbproj merge=union
+
+# Standard to msysgit
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+.gitattributes text eol=lf
