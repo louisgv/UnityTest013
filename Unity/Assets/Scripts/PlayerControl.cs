@@ -21,14 +21,14 @@ public class PlayerControl : MonoBehaviour
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
-	private Animator anim;					// Reference to the player's animator component.
+	//private Animator anim;					// Reference to the player's animator component.
 
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		anim = GetComponent<Animator>();
+		//anim = GetComponent<Animator>();
 	}
 
 
@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		anim.SetFloat("Speed", Mathf.Abs(h));
+		//anim.SetFloat("Speed", Mathf.Abs(h));
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * rigidbody2D.velocity.x < maxSpeed)
@@ -82,7 +82,7 @@ public class PlayerControl : MonoBehaviour
 		if(jump)
 		{
 			// Set the Jump animator trigger parameter.
-			anim.SetTrigger("Jump");
+			//anim.SetTrigger("Jump");
 
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
@@ -96,7 +96,7 @@ public class PlayerControl : MonoBehaviour
 		}
 		if (dJump)
 		{
-			anim.SetTrigger("Jump");
+			//anim.SetTrigger("Jump");
 			rigidbody2D.AddForce(new Vector2(1f, jumpForce));
 			dJump = false;
 		}
