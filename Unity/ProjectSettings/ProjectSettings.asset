@@ -10,8 +10,8 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: _2D v3
+  companyName: LouisGV
+  productName: Roll
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -103,7 +103,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: c0d7bb19e6d7b400483d85741b495289, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Black Background

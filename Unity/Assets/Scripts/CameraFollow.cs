@@ -38,6 +38,11 @@ public class CameraFollow : MonoBehaviour
 	void FixedUpdate ()
 	{
 		TrackPlayer();
+		if (player.localPosition.y < -50f || 
+		    player.localPosition.y > 50f ||
+		    player.localPosition.x < -20f){
+			StartCoroutine("ReloadGame");
+		}
 	}
 	
 	
@@ -63,5 +68,13 @@ public class CameraFollow : MonoBehaviour
 
 		// Set the camera's position to the target position with the same z component.
 		transform.position = new Vector3(targetX, targetY, transform.position.z);
+	}
+	
+	IEnumerator ReloadGame()
+	{			
+		// ... pause briefly
+		yield return new WaitForSeconds(0);
+		// ... and then reload the level.
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }
