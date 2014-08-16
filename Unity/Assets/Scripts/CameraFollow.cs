@@ -39,9 +39,11 @@ public class CameraFollow : MonoBehaviour
 	{
 		TrackPlayer();
 		if (player.localPosition.y < -50f || 
-		    player.localPosition.y > 50f ||
+		    //player.localPosition.y > 50f ||
 		    player.localPosition.x < -20f){
-			StartCoroutine("ReloadGame");
+			//StartCoroutine("ReloadGame");
+			player.position = 
+				player.gameObject.GetComponent<PlayerControl>().spawnPosition;
 		}
 	}
 	

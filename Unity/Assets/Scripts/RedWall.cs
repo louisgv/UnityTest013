@@ -6,7 +6,9 @@ public class RedWall : MonoBehaviour {
 	// Use this for initialization
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject.tag == "Player"){
-			StartCoroutine("ReloadGame");
+			//StartCoroutine("ReloadGame");
+			col.transform.position = 
+				col.gameObject.GetComponent<PlayerControl>().spawnPosition;
 		}
 	}
 	// Update is called once per frame

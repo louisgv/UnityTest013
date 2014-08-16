@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
+	[HideInInspector]
 	public bool dJump = false;            //Double Jump
 
 	public float moveForce = 360f;			// Amount of force added to move the player left and right.
@@ -22,7 +23,8 @@ public class PlayerControl : MonoBehaviour
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	//private Animator anim;					// Reference to the player's animator component.
-
+	
+	public Vector3 spawnPosition = Vector3.zero;
 
 	void Awake()
 	{
@@ -89,7 +91,7 @@ public class PlayerControl : MonoBehaviour
 			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
 			// Add a vertical force to the player.
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce/2));
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce/3));
 		
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
