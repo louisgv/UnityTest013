@@ -159,7 +159,8 @@ MonoBehaviour:
   dJump: 0
   moveForce: 360
   maxSpeed: 9
-  jumpForce: 450
+  jumpForce: 150
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
