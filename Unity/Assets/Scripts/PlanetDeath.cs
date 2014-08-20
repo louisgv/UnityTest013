@@ -33,8 +33,13 @@ public class PlanetDeath : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D col){
 		if (col.gameObject.tag == "Player"){
 			
-			col.gameObject.rigidbody2D.gravityScale = 0.1f;
-			col.gameObject.rigidbody2D.velocity /= 2.0f;
+			col.gameObject.rigidbody2D.gravityScale = 0.09f;
+			/*
+			col.gameObject.rigidbody2D.velocity = 
+				Vector2.Lerp(col.gameObject.rigidbody2D.velocity,
+				             Vector2.zero,
+				             Time.deltaTime*0.9f);
+				             */
 			//col.gameObject.rigidbody2D.angularVelocity = 0.1f;
 			Physics2D.gravity = (Vector2)Vector3.down;
 		}

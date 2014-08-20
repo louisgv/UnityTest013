@@ -7,17 +7,22 @@ public class CamHint : MonoBehaviour {
 	public int objectiveCount = 0;
 	public float timer = 9.0f;
 	private int hint = 0;
+	//private float orthographPreSize;
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetAxis("Mouse ScrollWheel") > 0){
+			float orthographPreSize = Camera.main.orthographicSize;
 			if (Camera.main.orthographicSize < 540){
-				Camera.main.orthographicSize += zoomSpeed * Time.deltaTime ;
+					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime ;			
+				transform.localScale *= Camera.main.orthographicSize/orthographPreSize;
 			}
 		}
 		if (Input.GetAxis("Mouse ScrollWheel") < 0){
+			float orthographPreSize = Camera.main.orthographicSize;			
 			if (Camera.main.orthographicSize > 9){
 				Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime;
 			}
+			transform.localScale *= Camera.main.orthographicSize/orthographPreSize;
 		}
 		timer -= Time.fixedDeltaTime;
 		if (timer < 0 ){

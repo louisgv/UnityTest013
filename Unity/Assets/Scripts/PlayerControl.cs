@@ -5,11 +5,12 @@ public class PlayerControl : MonoBehaviour
 {
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
-/*	[HideInInspector]
+	/*
+	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
 	[HideInInspector]
 	public bool dJump = false;            //Double Jump
-*/
+    */
 	public float moveForce = 360f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 9f;				// The fastest the player can travel in the x axis.
 	//public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
@@ -65,12 +66,24 @@ public class PlayerControl : MonoBehaviour
 		//anim.SetFloat("Speed", Mathf.Abs(h));
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		//if(h * rigidbody2D.velocity.x < maxSpeed)
+		if(h * rigidbody2D.velocity.x < maxSpeed){
 			// ... add a force to the player.
-		rigidbody2D.AddForce(rightDir * h * moveForce);
-		rigidbody2D.AddForce(upDir * v * moveForce);
+			rigidbody2D.AddForce(rightDir * h * moveForce);
+		}
+		if (Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed){
+			rigidbody2D.velocity = 
+				new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, 
+				            rigidbody2D.velocity.y);      
+		}
+		if (v * rigidbody2D.velocity.y < maxSpeed){
+			rigidbody2D.AddForce(upDir * v * moveForce);
+		}
 		// If the player's horizontal velocity is greater than the maxSpeed...
-		//if(Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
+		if(Mathf.Abs(rigidbody2D.velocity.y) > maxSpeed){
+			rigidbody2D.velocity = 
+				new Vector2(rigidbody2D.velocity.x, 
+				            Mathf.Sign(rigidbody2D.velocity.y) * maxSpeed);
+		}
 			// ... set the player's velocity to the maxSpeed in the x axis.
 			//rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
 
@@ -78,19 +91,24 @@ public class PlayerControl : MonoBehaviour
 		
 		
 		if(h > 0 && !facingRight)
-			// ... flip the player.
-			Flip();
-		// Otherwise if the input is moving the player left and the player is facing right...
+			facingRight = !facingRight;
+		
 		else if(h < 0 && facingRight)
+			facingRight = !facingRight;
+		
 			// ... flip the player.
-			Flip();
+		//	Flip();
+		// Otherwise if the input is moving the player left and the player is facing right...
+		//else if(h < 0 && facingRight)
+			// ... flip the player.
+		//	Flip();
 
 		// If the player should jump...
 		
 	}
 	
 	
-	void Flip ()
+	/*void Flip ()
 	{
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
@@ -99,6 +117,6 @@ public class PlayerControl : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
+	}*/
 
 }
