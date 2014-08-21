@@ -34,6 +34,8 @@ public class PlanetDeath : MonoBehaviour {
 		if (col.gameObject.tag == "Player"){
 			
 			col.gameObject.rigidbody2D.gravityScale = 0.09f;
+			col.gameObject.rigidbody2D.velocity = 
+				Vector2.zero;
 			/*
 			col.gameObject.rigidbody2D.velocity = 
 				Vector2.Lerp(col.gameObject.rigidbody2D.velocity,
@@ -41,7 +43,7 @@ public class PlanetDeath : MonoBehaviour {
 				             Time.deltaTime*0.9f);
 				             */
 				             
-			//col.gameObject.rigidbody2D.angularVelocity = 0.1f;
+			col.gameObject.rigidbody2D.angularVelocity = 0.1f;
 			Physics2D.gravity = (Vector2)Vector3.down;
 		}
 	}

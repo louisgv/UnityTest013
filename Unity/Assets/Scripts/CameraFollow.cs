@@ -58,11 +58,14 @@ public class CameraFollow : MonoBehaviour
 				if (orthographPreSize > 90)
 				{
 					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime * 9;
-					player.Find("Rainbows").localScale *= 
-						Camera.main.orthographicSize/orthographPreSize;
+					float ratio = Camera.main.orthographicSize/orthographPreSize;
+					
+					player.Find("Rainbows").localScale *= ratio;
+					player.GetComponent<PlayerControl>().moveForce = 180;
+					player.GetComponent<PlayerControl>().maxSpeed = 180;
 				}
 				else{
-					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime ;	
+					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime ;
 				}
 			}
 			transform.localScale *= 
@@ -71,12 +74,17 @@ public class CameraFollow : MonoBehaviour
 		if (Input.GetAxis("Mouse ScrollWheel") > 0){
 			float orthographPreSize = Camera.main.orthographicSize;			
 			if (orthographPreSize > 9){
-				if (orthographPreSize >90){
+				if (orthographPreSize >90){					
 					Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime * 9;
-					player.Find("Rainbows").localScale *= Camera.main.orthographicSize/orthographPreSize;
+					
+					float ratio = Camera.main.orthographicSize/orthographPreSize;
+					player.Find("Rainbows").localScale *= ratio;
+									
 				}
 				else{
-					Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime ;
+					Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime;
+					player.GetComponent<PlayerControl>().moveForce = 18;
+					player.GetComponent<PlayerControl>().maxSpeed = 18;
 				}
 			}
 			transform.localScale *= Camera.main.orthographicSize/orthographPreSize;
