@@ -32,11 +32,14 @@ public class CameraFollow : MonoBehaviour
 		// Returns true if the distance between the camera and the player in the y axis is greater than the y margin.
 		return Mathf.Abs(transform.position.y - player.position.y) > yMargin;
 	}
-	public Vector3 maxPosition = new Vector3 (999,999,0);
-	public Vector3 minPosition = new Vector3 (-20.0f,-50.0f,0);
-
+	
+	public Vector3 maxPosition = new Vector3 (999.0f,999.0f,0);
+	public Vector3 minPosition = new Vector3 (-999.0f,-999.0f,0);
+	public float zoomSpeed = 90.0f;
+	
 	void FixedUpdate ()
 	{
+		ZoomScreen();
 		TrackPlayer();
 		if (player.localPosition.y < minPosition.y ||
 			player.localPosition.y > maxPosition.y||
@@ -48,6 +51,37 @@ public class CameraFollow : MonoBehaviour
 		}
 	}
 	
+	void ZoomScreen(){
+		if (Input.GetAxis("Mouse ScrollWheel") < 0){
+			float orthographPreSize = Camera.main.orthographicSize;
+			if (orthographPreSize < 900){
+				if (orthographPreSize > 90)
+				{
+					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime * 9;
+					player.Find("Rainbows").localScale *= 
+						Camera.main.orthographicSize/orthographPreSize;
+				}
+				else{
+					Camera.main.orthographicSize += zoomSpeed * Time.deltaTime ;	
+				}
+			}
+			transform.localScale *= 
+				Camera.main.orthographicSize/orthographPreSize;
+		}
+		if (Input.GetAxis("Mouse ScrollWheel") > 0){
+			float orthographPreSize = Camera.main.orthographicSize;			
+			if (orthographPreSize > 9){
+				if (orthographPreSize >90){
+					Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime * 9;
+					player.Find("Rainbows").localScale *= Camera.main.orthographicSize/orthographPreSize;
+				}
+				else{
+					Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime ;
+				}
+			}
+			transform.localScale *= Camera.main.orthographicSize/orthographPreSize;
+		}
+	}
 	
 	void TrackPlayer ()
 	{

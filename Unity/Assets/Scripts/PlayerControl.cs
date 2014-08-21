@@ -25,6 +25,8 @@ public class PlayerControl : MonoBehaviour
 	//private bool grounded = false;			// Whether or not the player is grounded.
 	//private Animator anim;					// Reference to the player's animator component.
 	
+	//public bool escapeJump = true;
+	
 	public Vector3 spawnPosition = Vector3.zero;
 
 	/*void Awake()
@@ -41,15 +43,10 @@ public class PlayerControl : MonoBehaviour
 		//grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		
-		if(Physics2D.gravity != (Vector2)Vector3.down){
+		if(Physics2D.gravity.normalized != (Vector2)Vector3.down){
 			if(Input.GetButtonDown("Jump"))	{ 
 				rigidbody2D.AddForce(new Vector2(-Physics2D.gravity.normalized.x*jumpForce, 
 				                                 -Physics2D.gravity.normalized.y*jumpForce));
-			}
-			if (Input.GetKeyDown("down")){
-				rigidbody2D.AddForce(new Vector2(Physics2D.gravity.normalized.x*jumpForce, 
-				                                 Physics2D.gravity.normalized.y*jumpForce));
 			}
 		}
 	}
@@ -84,6 +81,8 @@ public class PlayerControl : MonoBehaviour
 				new Vector2(rigidbody2D.velocity.x, 
 				            Mathf.Sign(rigidbody2D.velocity.y) * maxSpeed);
 		}
+		
+		
 			// ... set the player's velocity to the maxSpeed in the x axis.
 			//rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
 

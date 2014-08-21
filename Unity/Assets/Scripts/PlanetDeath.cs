@@ -40,6 +40,7 @@ public class PlanetDeath : MonoBehaviour {
 				             Vector2.zero,
 				             Time.deltaTime*0.9f);
 				             */
+				             
 			//col.gameObject.rigidbody2D.angularVelocity = 0.1f;
 			Physics2D.gravity = (Vector2)Vector3.down;
 		}
