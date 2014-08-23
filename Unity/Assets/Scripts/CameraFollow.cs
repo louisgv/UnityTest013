@@ -87,7 +87,8 @@ public class CameraFollow : MonoBehaviour
 					player.GetComponent<PlayerControl>().maxSpeed = 18;
 				}
 			}
-			transform.localScale *= Camera.main.orthographicSize/orthographPreSize;
+			transform.localScale *= 
+				Camera.main.orthographicSize/orthographPreSize;
 		}
 	}
 	

@@ -23,6 +23,8 @@ public class PlanetDeath : MonoBehaviour {
 		Camera.main.GetComponent<BackGroundGradient>().randomColor();
 		if (col.gameObject.tag == "Player"){
 			
+		
+			
 			//Debug.Log("In!");
 			//col.gameObject.GetComponent<PlayerControl>().spawnPosition = 
 				//col.transform.position;

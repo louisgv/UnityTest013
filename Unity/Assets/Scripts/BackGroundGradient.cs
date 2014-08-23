@@ -6,7 +6,6 @@ public class BackGroundGradient : MonoBehaviour {
 	public Color previousColor;
 	
 	void Awake(){
-	
 		previousColor = camera.backgroundColor;
 		
 	}
