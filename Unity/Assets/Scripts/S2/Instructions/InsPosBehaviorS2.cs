@@ -3,11 +3,14 @@ using System.Collections;
 
 public class InsPosBehaviorS2 : MonoBehaviour {
 
-	public string msg;	
+	public string msg;
+	public bool noChangeColor = false;
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject.tag == "Player"){
 			//Debug.Log("In!");
-			Camera.main.GetComponent<BackGroundGradient>().randomColor();
+			if (!noChangeColor){
+				Camera.main.GetComponent<BackGroundGradient>().randomColor();
+			}
 			transform.GetComponent<TextMesh>().text = msg;
 		}
 	}

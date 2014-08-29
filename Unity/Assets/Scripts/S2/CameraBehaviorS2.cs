@@ -4,7 +4,9 @@ using System.Collections;
 public class CameraBehaviorS2 : MonoBehaviour {
 
 	private Transform player;		// Reference to the player's transform.
-	
+
+	public bool isNegatePosition = false;
+		
 	void Awake ()
 	{
 		// Setting up the reference.
@@ -42,6 +44,7 @@ public class CameraBehaviorS2 : MonoBehaviour {
 	
 	public Vector2 maxChar = new Vector2 (45.0f,45.0f);
 	public Vector2 minChar = new Vector2 (-45.0f,-45.0f);
+	
 	void EliminatePlayer()
 	{
 		if (player.localPosition.y < minChar.y ||
