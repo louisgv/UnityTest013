@@ -15,7 +15,7 @@ public class CaneraHintS2 : MonoBehaviour {
 		timer -= Time.fixedDeltaTime;
 		if (timer < 0 ){
 			if (hint==0){
-				hint = Random.Range(1,transform.Find("Hints").childCount);
+				hint = Random.Range(1,transform.Find("Hints").childCount + 1);
 				//Debug.Log(transform.Find("Hint" + hint.ToString()).gameObject);
 				transform.Find("Hints").
 					Find("Hint" + hint.ToString()).gameObject.SetActive(true);

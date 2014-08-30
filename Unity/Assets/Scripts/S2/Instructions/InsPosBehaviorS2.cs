@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class InsPosBehaviorS2 : MonoBehaviour {
 
+	public AudioClip touched;
 	public string msg;
 	public bool noChangeColor = false;
 	void OnTriggerEnter2D(Collider2D col){
@@ -12,6 +14,7 @@ public class InsPosBehaviorS2 : MonoBehaviour {
 				Camera.main.GetComponent<BackGroundGradient>().randomColor();
 			}
 			transform.GetComponent<TextMesh>().text = msg;
+			audio.PlayOneShot(touched, 0.7f);
 		}
 	}
 	

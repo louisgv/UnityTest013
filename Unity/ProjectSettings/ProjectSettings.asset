@@ -11,7 +11,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: LouisGV
-  productName: Roll
+  productName: SillyRoll
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -104,7 +104,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: bdf1193f9110f934797138ef288a1550, type: 3}
+    - m_Icon: {fileID: 2800000, guid: e1a86f053f18527488b7f132794f708f, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Web

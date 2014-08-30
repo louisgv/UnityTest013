@@ -52,12 +52,12 @@ public class GameManagerS2 : MonoBehaviour {
 			result.normal.textColor = new Color (1.0f - bg.r, 1.0f - bg.g, 1.0f - bg.b);
 			GUI.Label(new Rect(9, Screen.height - 90, 0, 45), "Success!", result);
 			if (levelNo < 10){
-				if (GUI.Button(new Rect (9, Screen.height - 45, Screen.width, 45), "Next", result)){
+				if (GUI.Button(new Rect (9, Screen.height - 45, Screen.width, 45), "Click Here to Next", result)){
 					transform.GetComponent<IndieQuiltCommunicator>().difficulty += 1;
 				}
 			}
 			else {
-				if (GUI.Button(new Rect (9, Screen.height - 45, Screen.width, 45), "Click to Finish", result)){
+				if (GUI.Button(new Rect (9, Screen.height - 45, Screen.width, 45), "Click Here to Finish", result)){
 					transform.GetComponent<IndieQuiltCommunicator>().finished = true;
 				}
 			}
@@ -65,7 +65,7 @@ public class GameManagerS2 : MonoBehaviour {
 		if (failure){
 			result.normal.textColor = new Color (1.0f - bg.r, 1.0f - bg.g, 1.0f - bg.b);
 			GUI.Label(new Rect(0, Screen.height - 90 , Screen.width, 45), "Failed...", result);
-			if (GUI.Button(new Rect (0, Screen.height - 45, Screen.width, 45), "Click to Retry", result)){
+			if (GUI.Button(new Rect (0, Screen.height - 45, Screen.width, 45), "Click Here to Retry", result)){
 				StartCoroutine(LoadLevel(0.0f));
 			}
 		}
@@ -119,7 +119,10 @@ public class GameManagerS2 : MonoBehaviour {
 		player.position = Vector2.zero;
 		player.GetComponent<TouchMoveS2>().enabled = true;
 		Time.timeScale = 1;
+		Camera.main.transform.localScale *= 
+			12.0f/Camera.main.orthographicSize;
 		Camera.main.orthographicSize = 12.0f;
+		
 		Camera.main.backgroundColor = Color.black;
 	}
 }

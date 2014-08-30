@@ -180,7 +180,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c03a4f973559b940b9b303a50dd887a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touched:
+  - {fileID: 8300000, guid: 87046ea56ca0f154b92a5ae8111467b1, type: 3}
+  - {fileID: 8300000, guid: 3159b191c12bafc46bd8eac62fe20370, type: 3}
+  - {fileID: 8300000, guid: 0fe3cfb4469fb674b8d74b212471789e, type: 3}
+  - {fileID: 8300000, guid: 158bec68478cafd49b1813c7b69f489d, type: 3}
+  - {fileID: 8300000, guid: f6b2fc84e1ce1914eae5f8a62d597e9a, type: 3}
+  - {fileID: 8300000, guid: 989be9d4b52a4544d8b7a68114a5dffb, type: 3}
+  - {fileID: 8300000, guid: b143b866662f4384797e029395c7e909, type: 3}
   msg: check
+  noChangeColor: 0
+  dir: -1
+  speed: 9
+  noDirection: 0
+  angle: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

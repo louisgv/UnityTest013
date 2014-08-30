@@ -442,6 +442,7 @@ GameObject:
   - 102: {fileID: 10200002}
   - 114: {fileID: 11400006}
   - 58: {fileID: 5800004}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: InstructionPositionS2
   m_TagString: Untagged
@@ -2144,6 +2145,64 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 90
   m_Center: {x: 0, y: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100054}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!102 &10200000
 TextMesh:
   serializedVersion: 3
@@ -2172,7 +2231,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100054}
-  m_Text: Touch
+  m_Text: Hint
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -2343,7 +2402,7 @@ MonoBehaviour:
   isYellowHole: 0
   isPurpleHole: 0
   isOrangeHole: 0
-  isMagnetaHole: 0
+  isMagentaHole: 0
   isCyanHole: 0
   isGrayHole: 0
   isDarkHole: 0
@@ -2369,7 +2428,7 @@ MonoBehaviour:
   isYellowHole: 0
   isPurpleHole: 0
   isOrangeHole: 0
-  isMagnetaHole: 0
+  isMagentaHole: 0
   isCyanHole: 0
   isGrayHole: 0
   isDarkHole: 0
@@ -2389,7 +2448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c03a4f973559b940b9b303a50dd887a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: check
+  touched: {fileID: 8300000, guid: 87046ea56ca0f154b92a5ae8111467b1, type: 3}
+  msg: N
   noChangeColor: 1
   dir: -1
   speed: 9
@@ -2412,7 +2472,7 @@ MonoBehaviour:
   isYellowHole: 0
   isPurpleHole: 0
   isOrangeHole: 0
-  isMagnetaHole: 0
+  isMagentaHole: 0
   isCyanHole: 0
   isGrayHole: 0
   isDarkHole: 0
@@ -2438,7 +2498,7 @@ MonoBehaviour:
   isYellowHole: 1
   isPurpleHole: 0
   isOrangeHole: 0
-  isMagnetaHole: 0
+  isMagentaHole: 0
   isCyanHole: 0
   isGrayHole: 0
   isDarkHole: 0
@@ -2464,7 +2524,7 @@ MonoBehaviour:
   isYellowHole: 0
   isPurpleHole: 0
   isOrangeHole: 0
-  isMagnetaHole: 0
+  isMagentaHole: 0
   isCyanHole: 0
   isGrayHole: 0
   isDarkHole: 0
