@@ -10,8 +10,33 @@ public class RainbowSurf : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject.tag == "Player"){
 			//Debug.Log("In!");
+			//This need to change somehow..
 			Camera.main.GetComponent<BackGroundGradient>().randomColor();
 			
+			
+			//Might need to move this to another script!
+			if (GJAPI.User != null){
+				if (isRedHole){
+					GJAPI.Trophies.Add(10777) ;
+					GJAPI.Trophies.Get(10777);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10777);
+				}
+				if (isGreenHole){
+					GJAPI.Trophies.Add(10824) ;
+					GJAPI.Trophies.Get(10824);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10824);
+				}
+				if (isBlueHole){
+					GJAPI.Trophies.Add(10827) ;
+					GJAPI.Trophies.Get(10827);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10827);
+				}
+				if (isDarkHole){
+					GJAPI.Trophies.Add(10826) ;
+					GJAPI.Trophies.Get(10826);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10826);
+				}
+			}
 		}
 	}
 	
@@ -28,8 +53,8 @@ public class RainbowSurf : MonoBehaviour {
 	public bool isDistortHole = false;
 
 	public Color distortCam, distortRain;
-	// MIGHT BE BETTER TO ASSESS THIS DIRECTLY!
-	// Maybe try some other type of holes?
+	
+	
 	
 	void OnTriggerStay2D(Collider2D col){
 		if (col.gameObject.tag == "Player"){
@@ -37,6 +62,7 @@ public class RainbowSurf : MonoBehaviour {
 			if (isRedHole){
 				ColorMorph(Color.black, Color.red) ;
 				transform.parent.GetComponent<RainbowSystem>().failure = true;
+				
 			}
 			else if (isGreenHole){
 				ColorMorph(Color.red, Color.green);

@@ -10,14 +10,19 @@ public class GameJoltAPIManager : MonoBehaviour {
 	void Awake () {
 		DontDestroyOnLoad ( gameObject );
 		GJAPI.Init ( gameID, privateKey );
-		//GJAPIHelper.Users.ShowLogin();
 		GJAPIHelper.Users.GetFromWeb (OnGetFromWeb);
+		if (GJAPI.User == null){
+			GJAPIHelper.Users.ShowLogin();
+			//GJAPIHelper.Users.DismissLogin();
+			
+		}
 		GJAPIHelper.Users.ShowGreetingNotification ();
 	}
 	
 	void OnGetFromWeb(string name, string token){
-		userName = name;
-		userToken = token;
+		if (name != null || token != null) {
+			GJAPI.Users.Verify(name, token);
+		}
 	}
 	void OnEnable () {
 		GJAPI.Users.VerifyCallback += OnVerifyUser;

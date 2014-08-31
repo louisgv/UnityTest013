@@ -37,6 +37,11 @@ public class Special30sWaitGoal : MonoBehaviour {
 		if (isInside){
 			transform.parent.Find("RainbowSurf").gameObject.SetActive (true);
 			done = true;
+			if (GJAPI.User != null){
+				GJAPI.Trophies.Add(10825) ;
+				GJAPI.Trophies.Get(10825);
+				GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10825);
+			}
 		}
 	}
 }
