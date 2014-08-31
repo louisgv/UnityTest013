@@ -821,6 +821,7 @@ GameObject:
   - 4: {fileID: 400098}
   - 58: {fileID: 5800020}
   - 114: {fileID: 11400022}
+  - 114: {fileID: 11400028}
   m_Layer: 0
   m_Name: RainbowSurf
   m_TagString: Untagged
@@ -3389,6 +3390,20 @@ MonoBehaviour:
   speed: 9
   noDirection: 0
   angle: 0
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751128dfaff30044aadb3cab9de38a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trophyID: 10872
+  isZoomTrophy: 0
+  isInsideTrophy: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -526,6 +526,7 @@ GameObject:
   - 4: {fileID: 400064}
   - 58: {fileID: 5800010}
   - 114: {fileID: 11400012}
+  - 114: {fileID: 11400036}
   m_Layer: 0
   m_Name: 6
   m_TagString: Untagged
@@ -3528,6 +3529,20 @@ MonoBehaviour:
   distortRain: {r: 0, g: 0, b: 0, a: 0}
   morphSpeed: .899999976
   zoomSpeed: 9
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751128dfaff30044aadb3cab9de38a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trophyID: 10828
+  isZoomTrophy: 0
+  isInsideTrophy: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

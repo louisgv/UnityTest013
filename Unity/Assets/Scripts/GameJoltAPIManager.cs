@@ -10,13 +10,21 @@ public class GameJoltAPIManager : MonoBehaviour {
 	void Awake () {
 		DontDestroyOnLoad ( gameObject );
 		GJAPI.Init ( gameID, privateKey );
+
+#if UNITY_EDITOR
+		OnGetFromWeb ("louisgv", "f8db4c");
+#else
 		GJAPIHelper.Users.GetFromWeb (OnGetFromWeb);
+#endif
+
+		StartCoroutine(checkUser());
+	}
+	
+	IEnumerator checkUser(){
+		yield return new WaitForSeconds(3.0f);
 		if (GJAPI.User == null){
-			GJAPIHelper.Users.ShowLogin();
-			//GJAPIHelper.Users.DismissLogin();
-			
-		}
-		GJAPIHelper.Users.ShowGreetingNotification ();
+			GJAPIHelper.Users.ShowLogin();	
+		}		
 	}
 	
 	void OnGetFromWeb(string name, string token){
@@ -32,7 +40,8 @@ public class GameJoltAPIManager : MonoBehaviour {
 		GJAPI.Users.VerifyCallback -= OnVerifyUser;
 	}
 	void OnVerifyUser ( bool success ) {
-		if ( success ) {
+		if ( success ) {		
+			GJAPIHelper.Users.ShowGreetingNotification ();
 			Debug.Log ( "Yepee!" );
 		}
 		else {

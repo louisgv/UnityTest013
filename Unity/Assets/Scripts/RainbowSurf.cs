@@ -31,6 +31,35 @@ public class RainbowSurf : MonoBehaviour {
 					GJAPI.Trophies.Get(10827);
 					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10827);
 				}
+				if (isYellowHole){
+					GJAPI.Trophies.Add(10873) ;
+					GJAPI.Trophies.Get(10873);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10873);
+					
+				}
+				if (isPurpleHole){
+					GJAPI.Trophies.Add(10874) ;
+					GJAPI.Trophies.Get(10874);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10874);
+					
+				}
+				if (isOrangeHole){
+					GJAPI.Trophies.Add(10875) ;
+					GJAPI.Trophies.Get(10875);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10875);
+					
+				}
+				if (isMagentaHole){
+					GJAPI.Trophies.Add(10876) ;
+					GJAPI.Trophies.Get(10876);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10876);
+					
+				}
+				if (isCyanHole){
+					GJAPI.Trophies.Add(10877) ;
+					GJAPI.Trophies.Get(10877);
+					GJAPIHelper.Trophies.ShowTrophyUnlockNotification (10877);
+				}
 				if (isDarkHole){
 					GJAPI.Trophies.Add(10826) ;
 					GJAPI.Trophies.Get(10826);
